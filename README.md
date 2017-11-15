@@ -11,4 +11,4 @@ Python jupiter notebook
 
 2) start and reinstall all workspace
 
-`start.sh -c`
+`./start.sh -c`
