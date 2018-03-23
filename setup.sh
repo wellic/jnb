@@ -18,10 +18,13 @@ if [ "$DO_CLEAR" = 1 -a -d "$VENV" ]; then
 fi
 
 virtualenv "$VENV" --python="$PYTHON_VER"
-"$PIP" install --upgrade pip
-
 source "$VENV/bin/activate"
+
+"$PIP" install --upgrade pip
 "$PIP" install -r requirements.txt
+
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
 
 [ -d "$NB_DIR" ] || mkdir -p "$NB_DIR"
 cd "$NB_DIR"
